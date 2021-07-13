@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    display: flex;
+    flex-flow: row wrap;
+    height: 40vw;
+    width: 40vw;
+}
+
+.square {
+    display: flex;
+    background-color: aliceblue;
+    height: 30%;
+    width: 30%;
+    margin-right: 3.333333333333%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'made_evolve_medium';
+}
+
+.xo {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 15vw;
+    font-family: 'made_evolve_medium';
+    align-items: center;
+    justify-content: center;
+}
+
+.xo:disabled {
+    color: black;
+}
