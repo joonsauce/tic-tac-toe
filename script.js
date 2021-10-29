@@ -15,8 +15,8 @@ function placeX(id) {
     document.getElementById(id).disabled = true;
     // checks where to put the X on the virtual board
     apppend = checkAppend(id);
-    appendRow = append[0]
-    appendCol = append[1]
+    let appendRow = append[0];
+    let appendCol = append[1];
     // places X on the virtual board
     table[appendRow][appendCol] = "X";
     checkWinLoss();
@@ -27,31 +27,39 @@ function clicked(id) {
     document.getElementById(id).innerHTML = 'O';
     document.getElementById(id).disabled = true;
     apppend = checkAppend(id);
-    appendRow = append[0]
-    appendCol = append[1]
+    let appendRow = append[0];
+    let appendCol = append[1];
     table[appendRow][appendCol] = "O";
     checkWinLoss();
     // gets the next position for the bot to place
     getNext(id);
 }
 
+// checks if all items in an array is the same
+const allEqual = arr => arr.every(val => val === arr[0]);
+
 // makes engine check if any side has won, lost, or tied
 function checkWinLoss() {
-    var r1 = table[0]
-    var r2 = table[1]
-    var r3 = table[2]
-    var c1 = [table[0][0], table[1][0], table[2][0]]
-    var c2 = [table[0][1], table[1][1], table[2][1]]
-    var c3 = [table[0][2], table[1][2], table[2][2]]
-    var d1 = [table[0][0], table[1][1], table[2][2]]
-    var d2 = [table[0][2], table[1][1], table[2][0]]
-    var listOfPossibilities = ["r1", "r2", "r3", "c1", "c2", "c3", "d1", "d2"]
-    // missing code to execute the function below
-    for (let i = 0; i < 8; i++) {
-        
+    let r1 = table[0];
+    let r2 = table[1];
+    let r3 = table[2];
+    let c1 = [table[0][0], table[1][0], table[2][0]];
+    let c2 = [table[0][1], table[1][1], table[2][1]];
+    let c3 = [table[0][2], table[1][2], table[2][2]];
+    let d1 = [table[0][0], table[1][1], table[2][2]];
+    let d2 = [table[0][2], table[1][1], table[2][0]];
+    let listOfPossibilities = [r1, r2, r3, c1, c2, c3, d1, d2];
+    for (let i = 0; i ++; i <= 8) {
+        const result = allEqual(listOfPossibilities[i]);
+        // missing execution code below
+        if (result = true) {
+
+        }
+        else {
+
+        }
     }
 }
-
 
 // allows checkAppend function to send the coordinates of change position
 var appendPos = [];
@@ -93,7 +101,7 @@ function getNext(lastID){
 
 // sets variables for checkAvail function
 var availArray = [];
-var pos = 0;
+var pos;
 
 // figures out which positions are legal to put the X in
 function checkAvail(){
@@ -113,7 +121,7 @@ function checkAvail(){
 }
 
 // sets variables for checkPos function
-var returnNumber = 0;
+var returnNumber;
 
 // allows checkAvail function to figure out which position is available from the virtual board
 function checkPos(row, column){
